@@ -1,0 +1,13 @@
+{% if status == "ok" %}
+{
+    "status": "OK",
+    "tag": "payRequest",
+    "callback": "{{ callback_proto }}://{{ callback_host }}/.well-known/lnurlp/pay/callback",
+    "minSendable": {{ min_sendable }},
+    "maxSendable": {{ max_sendable }},
+    "commentAllowed": {{ comment_length }},
+    "metadata": "[[\"text/identifier\",\"{{ name }}\"],[\"text/plain\",\"{{ description }}\"]]"
+}
+{% else if status == "error" %}
+{"status": "ERROR", "reason": "{{ error_message }}"}
+{% endif %}

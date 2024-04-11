@@ -1,0 +1,19 @@
+[package]
+name = "lnaddress_phoenixd"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+askama = { version = "0.12.1", features = ["with-axum"] }
+askama_axum = "0.4.0"
+axum = { version = "0.7.4", features = ["tracing", "original-uri"] }
+tokio = { version = "1.35.1", features = ["rt-multi-thread"] }
+tower-http = { version = "0.5.1", features = ["fs", "trace"] }
+tracing = "0.1.40"
+reqwest = { version = "0.12.2", features = ["json"] }
+serde = { version = "1.0.197", features = ["derive"] }
+clap = { version = "4.5.4", features = ["derive", "env"] }
+tracing-subscriber = { version= "0.3.18", features = ["env-filter"] }

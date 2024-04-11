@@ -1,0 +1,14 @@
+{% if status == "ok" %}
+{
+    "pr": "{{ ln_data }}",
+    "disposable": null,
+    "routes": []{% if success_message != "" %},
+    "successAction": {
+        "tag": "message",
+        "message": "{{ success_message }}"
+    }
+{% endif %}
+}
+{% else if status == "error" %}
+{"status": "ERROR", "reason": "{{ error_message }}"}
+{% endif %}
